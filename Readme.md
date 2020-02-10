@@ -2,7 +2,7 @@
 
 This example shows simple backend that can be used for game with levels and collecting rewards. 
 
-##Before you start
+## Before you start
 
 Note that connection string isn't in appsettings.json, but directly in ExampleDbContext in method OnConfiguring, this is beacuse I was unable quickly resolve this problem with context pooling, that worked for MySQL and Ef core 2.2
 
@@ -19,13 +19,13 @@ Contains entity classes,dbcontext and migrations
 
 ### Service
 
-*Constants - Enums and Constant values used in backend
-*Definitions - Model and logic for creating static definitions class for entire backend from json files.
-*Exceptions - Custom exceptions for easier error handling
-*Helpers - Logic for determining categories and other metadata
-*Mappers - Mapping between layers and to client objects
-*Resources - Contains definition jsons
-*Value objects - Client objects, that is shared with unity client
+* Constants - Enums and Constant values used in backend
+* Definitions - Model and logic for creating static definitions class for entire backend from json files.
+* Exceptions - Custom exceptions for easier error handling
+* Helpers - Logic for determining categories and other metadata
+* Mappers - Mapping between layers and to client objects
+* Resources - Contains definition jsons
+* Value objects - Client objects, that is shared with unity client
 
 ### API
 
