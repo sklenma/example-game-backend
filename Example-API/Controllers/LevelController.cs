@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Example_API.Requests;
 using Example_Service;
 using Example_Service.Exceptions;
 using Example_Service.ValueObjects;
-using Example_Service.ValueObjects.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Example_API.Controllers
@@ -19,16 +19,15 @@ namespace Example_API.Controllers
             _levelService = levelService;
         }
 
-        [HttpPost("CompleteLevel/{playerId}")]
-        public async Task<ActionResult<PlayerAwardVO>> CompleteLevel(int playerId)
+        [HttpPost("CompleteLevel")]
+        public async Task<ActionResult<PlayerAwardVO>> CompleteLevel([FromBody]CompleteLevelRequest request)
         {
             try
             {
-                return await _levelService.CompleteLevel(playerId);
+                return await _levelService.CompleteLevel(request.PlayerId);
             }
             catch (PlayerNotFoundException e)
             {
-                Console.WriteLine(e);
                 return NotFound("Player not found");
             }
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Example_API.Requests;
 using Example_Persistance;
 using Example_Service;
 using Example_Service.Exceptions;
@@ -22,16 +23,16 @@ namespace Example_API.Controllers
             _rewardMapper = rewardMapper;
         }
 
-        [HttpPost("collectAward/{playerId}/{level}")]
-        public async Task<ActionResult<AwardResponseVO>> CollectAward(int playerId, int level)
+        [HttpPost("collectAward")]
+        public async Task<ActionResult<AwardResponseVO>> CollectAward([FromBody]CollectAwardRequest request)
         {
             try
             {
-                var rewardArticles = await _rewardService.CollectAward(playerId, level);
+                var rewardArticles = await _rewardService.CollectAward(request.PlayerId, request.Level);
 
                 if (rewardArticles != null && rewardArticles.Count > 0)
                 {
-                    return Ok(_rewardMapper.MapAwardResponseVo(rewardArticles, true, level));
+                    return Ok(_rewardMapper.MapAwardResponseVo(rewardArticles, true, request.Level));
                 }
 
                 return BadRequest("FAIL - REWARDS ALREADY COLLECTED");
