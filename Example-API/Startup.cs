@@ -33,10 +33,9 @@ namespace Example_API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //ConfigureEntityFramework(services);
             services.AddDbContext<ExampleDbContext>();
 
-                services.AddControllers();
+            services.AddControllers();
 
             services.AddSingleton<IArticleHelper, ArticleHelper>();   
             services.AddSingleton<IAwardMapper, AwardMapper>();
@@ -79,23 +78,6 @@ namespace Example_API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Example APi v.1");
                 c.RoutePrefix = string.Empty;
             });
-        }
-
-        protected virtual void ConfigureEntityFramework(IServiceCollection services, DbConnection connection = null)
-        {
-            //if (connection == null)
-            //{
-            //    services.AddDbContextPool<ExampleDbContext>(
-            //        options => options.UseSqlite(
-            //            //Configuration.GetConnectionString("Local")
-            //            "Data Source=c:\\mydb.db;Version=3;Pooling=True;Max Pool Size=100;"
-            //        ));
-            //}
-            //else
-            //{
-            //}
-
-            //services.AddDbContext<ExampleDbContext>();
         }
     }
 }

@@ -13,8 +13,4 @@
     <ProjectReference Include="..\Example-Persistance\Example-Persistance.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dto\" />
-  </ItemGroup>
-
 </Project>

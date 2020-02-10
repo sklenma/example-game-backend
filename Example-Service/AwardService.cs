@@ -37,7 +37,6 @@ namespace Example_Service
 
         public async Task<List<PlayerAward>> GetPlayerAwards(int playerId)
         {
-            //var awards
             return await _context.PlayerAwards.Where(x => x.Player.PlayerId == playerId).ToListAsync();
         }
 
