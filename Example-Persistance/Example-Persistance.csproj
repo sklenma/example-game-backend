@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>Example_Persistance</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200210004830_Initial.cs" />
+    <Compile Remove="Migrations\20200210004830_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20200210082950_Initial.cs" />
+    <Compile Remove="Migrations\20200210082950_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20200210085653_Initial.cs" />
+    <Compile Remove="Migrations\20200210085653_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20200210102352_UpdatePlayerAward.cs" />
+    <Compile Remove="Migrations\20200210102352_UpdatePlayerAward.Designer.cs" />
+    <Compile Remove="Migrations\20200210113508_ChangedRealtionshipStoragePlayerArticle.cs" />
+    <Compile Remove="Migrations\20200210113508_ChangedRealtionshipStoragePlayerArticle.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>

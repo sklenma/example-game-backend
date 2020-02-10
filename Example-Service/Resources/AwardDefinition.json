@@ -1,0 +1,22 @@
+[
+  {
+    "Level": 1,
+    "Reward": "",
+    "RewardDescrption": "None"
+  },
+  {
+    "Level": 2,
+    "Reward": "(3002,1)",
+    "RewardDescrption": "1 item"
+  },
+  {
+    "Level": 3,
+    "Reward": "(1001,20)",
+    "RewardDescrption": "20 gems"
+  },
+  {
+    "Level": 4,
+    "Reward": "(1002,20);(3004,1);(3005,1)",
+    "RewardDescrption": "Gold + items"
+  }
+]
